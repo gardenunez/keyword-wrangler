@@ -19,6 +19,13 @@ var Server = function(port){
          });
         }
     });
+    server.route('/', {
+        GET: function(req, res){
+            res.writeHead(200, {"content-Type" : "application\json"})
+            res.write('{"hello": "world"}');
+            res.end();
+        }
+    });
     return server; 
 };
 
